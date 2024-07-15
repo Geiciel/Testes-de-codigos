@@ -1,0 +1,10 @@
+* { 
+    margin: 0px; 
+    padding: 0px;
+}
+
+div {
+    background-color: aqua;
+    width: 500px;
+    margin: 50px auto;
+}

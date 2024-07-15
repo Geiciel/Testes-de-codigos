@@ -1,0 +1,89 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Exemplo 1: Ícone antes do texto */
+.button::before {
+    content: "🔍";
+    margin-right: 8px;
+}
+
+/* Exemplo 1: Estilo ao clicar */
+.button.clicked {
+    background-color: #ff6347;
+    color: white;
+}
+
+/* Exemplo 2: Citação estilizada */
+blockquote {
+    position: relative;
+    font-style: italic;
+    padding-left: 20px;
+    border-left: 3px solid #ccc;
+    margin-left: 0;
+}
+
+blockquote::before {
+    content: open-quote;
+    font-size: 2em;
+    color: #ccc;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
+blockquote::after {
+    content: close-quote;
+    font-size: 2em;
+    color: #ccc;
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+}
+
+/* Exemplo 3: Elemento decorativo após um título */
+h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: #000;
+    margin-top: 8px;
+}
+
+/* Exemplo 4: Marcadores de lista personalizados */
+.custom-list {
+    list-style: none;
+    padding: 0;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.custom-list li::before {
+    content: "•";
+    color: #ff6347;
+    position: absolute;
+    left: 0;
+}
+
+/* Exemplo 4: Estilo ao clicar */
+.custom-list li.clicked::before {
+    color: #000;
+}
+
+/* Exemplo 5: Conteúdo extra com ::before e ::after */
+.highlighted::before {
+    content: "<<< ";
+    color: #ff6347;
+}
+
+.highlighted::after {
+    content: " >>>";
+    color: #ff6347;
+}

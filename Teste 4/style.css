@@ -1,0 +1,124 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #080808;
+}
+
+.sect {
+    margin: auto;
+    width: 450px;
+    height: 350px;
+    margin-top: 100px;
+    padding-top: 15px;
+    border-radius: 8px;
+}
+
+.form {
+    margin: auto;
+    width: 450px;
+    height: 340px;
+    background-color: #000000;
+    padding-top: 15px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+h1 {
+    color: #44ff00;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+form {
+    height: 74%;
+}
+
+.input, .input-ct {
+    width: 173px;
+    margin: auto;
+    margin-top: 10px;
+    color: #ffffff42;
+}
+
+.projeto {
+    color: #ffffff;
+}
+
+button {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    top: 20px;
+    left: 340px;
+    border-radius: 8px;
+    border: solid 2px #44ff00;
+    color: #44ff00;
+    background-color: transparent;
+}
+
+button > .bi {
+    font-size: 1.5rem;
+    
+}
+
+.env {
+    height: 60px;
+}
+
+button:hover {
+    width: 85px;
+    height: 45px;
+    top: 18px;
+    left: 338px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 0px 20px #44ff00;
+    color: black;
+    background-color: #44ff00;
+    transition: 0.7s;
+}
+
+/* Teste borda diferenciada */
+
+.princ {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 458px;
+    height: 362px;
+    background: #000000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.princ::before {
+    position: absolute;
+    content: '';
+    width: 30%;
+    height: 170%;
+    background: #44ff00;
+    transform: rotate(45deg);
+    box-shadow: 0px 0px 20px #44ff00;
+    animation: rotacao 2.8s linear infinite;
+}
+
+@keyframes rotacao {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.princ::after {
+    position: absolute;
+    content: '';
+    inset: 5px;
+    background: #000000;
+    border-radius: 8px;
+}
