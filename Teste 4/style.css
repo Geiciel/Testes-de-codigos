@@ -11,7 +11,7 @@ body {
 .sect {
     margin: auto;
     width: 450px;
-    height: 350px;
+    height: 550px;
     margin-top: 100px;
     padding-top: 15px;
     border-radius: 8px;
@@ -20,7 +20,7 @@ body {
 .form {
     margin: auto;
     width: 450px;
-    height: 340px;
+    height: 540px;
     background-color: #000000;
     padding-top: 15px;
     border-radius: 10px;
@@ -37,11 +37,41 @@ form {
     height: 74%;
 }
 
+.input {
+    position: relative;
+}
+
 .input, .input-ct {
-    width: 173px;
+    width: 250px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 40px;
     color: #ffffff42;
+}
+
+.input > input {
+    position: relative;
+    background-color: transparent;
+    outline: none;
+    font-size: 1.2em;
+    border: none;
+    width: 100%;
+    border-bottom: solid 2px #44ff00;
+    color: #ffffff;
+}
+
+.label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.input-p:focus ~ .label{
+    color: #41D9DB;
+    top: -20px;
+}
+
+.projeto textarea{
+    resize: none;
 }
 
 .projeto {
@@ -89,7 +119,7 @@ button:hover {
     place-items: center;
     position: relative;
     width: 458px;
-    height: 362px;
+    height: 562px;
     background: #000000;
     border-radius: 10px;
     overflow: hidden;
