@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+        canvas {
+            display: block;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+<p>Você esta em cada fibra do meu coração</p>
+<script>
+    let totalFrames = 2900; // Total de quadros para a animação de 35 segundos (60fps)
+    let i = 0;
+    let increment = 999 / totalFrames; // Ajuste do incremento para preencher em 35s
+
+    function setup() {
+        createCanvas(windowWidth, windowHeight);
+        background(0);
+        stroke('red');
+        strokeWeight(1);
+        frameRate(60);  // Controla a velocidade da animação
+    }
+
+    function hearta(k) {
+        return 15 * Math.sin(k) ** 3;
+    }
+
+    function heartb(k) {
+        return 12 * Math.cos(k) - 5 * Math.cos(2 * k) - 2 * Math.cos(3 * k) - Math.cos(4 * k);
+    }
+
+    function draw() {
+        translate(width / 2, height / 2); // Centraliza o coração
+
+        if (i < 900) {  // 900 é um valor menor para termos mais detalhes na linha
+            let x = hearta(i) * 20;
+            let y = -heartb(i) * 20; // Invertemos o eixo Y para corrigir a orientação
+            line(0, 0, x, y); // Desenha uma linha do centro até o ponto na curva do coração
+            i += increment;  // Incremento menor para maior detalhamento
+        } else {
+            noLoop(); // Para a animação após completar
+        }
+    }
+
+    function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+    }
+</script>
+
+</body>
+</html>

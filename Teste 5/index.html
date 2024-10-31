@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Animação de Botão</title>
+    <style>
+
+        .exte {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transition: .6s
+        }
+
+        .exte:hover {
+            height: 263px;
+            margin-bottom: -63px;
+            transition: .8s;
+        }
+
+        .hover-div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .button-container {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            transition: bottom 0.9s ease;
+        }
+
+        .exte:hover .hover-div  .button-container,
+        .hover-div.active .button-container {
+            top: 195px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0px 0px 8px 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Navegação</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#" role="button">Contato</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Animação de Botão</h2>
+                    <h3>Passe o mouse ou clique para ver o botão</h3>
+                </hgroup>
+                <p>Interaja com o quadrado abaixo para revelar o botão.</p>
+                <div class="exte">
+                    <div class="hover-div" onclick="toggleActive(this)">
+                        Passe o mouse ou clique
+                    
+                    </div>
+                    <div class="button-container">
+                            <button class="button">Clique Aqui</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <section aria-label="Subscribe example">
+        <div class="container">
+            <article>
+                <hgroup>
+                    <h2>Assine nossa Newsletter</h2>
+                    <h3>Receba as últimas atualizações</h3>
+                </hgroup>
+                <form class="grid">
+                    <input type="text" id="firstname" name="firstname" placeholder="Seu nome" aria-label="Seu nome" required />
+                    <input type="email" id="email" name="email" placeholder="Seu email" aria-label="Seu email" required />
+                    <button type="submit" onclick="event.preventDefault()">Inscrever-se</button>
+                </form>
+            </article>
+        </div>
+    </section>
+    <footer class="container">
+        <small>
+            <a href="#">Termos de Serviço</a> • 
+            <a href="#">Política de Privacidade</a>
+        </small>
+    </footer>
+
+    <script>
+        function toggleActive(element) {
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Animação de Aparecimento</title>
+    <style>
+        .hidden-text {
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: transform 0.8s ease-out, opacity 0.5s ease-out;
+        }
+
+        .visible-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin-top: 90vh; /* Espaço para simular rolagem */
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Navegação</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#" role="button">Contato</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Animação de Texto ao Rolar</h2>
+                    <h3>O texto abaixo aparecerá com uma transição ao rolar a página</h3>
+                </hgroup>
+                <div class="content hidden-text" id="animated-text">
+                    <p>Este é o texto que vai surgir da esquerda quando você rolar a página até aqui.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <section aria-label="Subscribe example">
+        <div class="container">
+            <article>
+                <hgroup>
+                    <h2>Assine nossa Newsletter</h2>
+                    <h3>Receba as últimas atualizações</h3>
+                </hgroup>
+                <form class="grid">
+                    <input type="text" id="firstname" name="firstname" placeholder="Seu nome" aria-label="Seu nome" required />
+                    <input type="email" id="email" name="email" placeholder="Seu email" aria-label="Seu email" required />
+                    <button type="submit" onclick="event.preventDefault()">Inscrever-se</button>
+                </form>
+            </article>
+        </div>
+    </section>
+    <footer class="container">
+        <small>
+            <a href="#">Termos de Serviço</a> • 
+            <a href="#">Política de Privacidade</a>
+        </small>
+    </footer>
+
+    <script>
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top < (window.innerHeight || document.documentElement.clientHeight)
+            );
+        }
+
+        function checkVisibility() {
+            const text = document.getElementById('animated-text');
+            if (isInViewport(text)) {
+                text.classList.add('visible-text');
+            }
+        }
+
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility);
+    </script>
+</body>
+</html>
