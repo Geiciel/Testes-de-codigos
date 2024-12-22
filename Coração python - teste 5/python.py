@@ -13,7 +13,7 @@ def heartb(k):
 speed(0)
 bgcolor("black")
 
-for i in range(9000):
+for i in range(1000):
     goto(hearta(i)*20,heartb(i)*20)
     for j in range(1):
         color("red")
